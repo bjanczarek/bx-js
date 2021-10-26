@@ -1,10 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<html>
+<head><meta charset="utf-8">
+	<title>BX - JS</title>
+	<link href="style.css" rel="stylesheet">
 </head>
 <body>
-BX xxx 1
+    <form id="form1" action="" class="form-example" onsubmit="return myFunction()">
+  <div class="form-example">
+    <label for="name">Name</label>
+    <input type="text" pattern="[a-z]{2,10}" name="name1" id="name1" required />
+  </div>
+    <div class="form-example">
+    <label for="name">Surname</label>
+    <input type="text" pattern="[a-z]{2,10}" name="name2" id="name2"  />
+  </div>
+  <div class="form-example">
+    <label for="email">Enter your email: </label>
+    <input type="email" name="email" id="email" pattern="[a-z0-9_.-]+@[a-z0-9_.-]+\.\w{2,4}" />
+  </div>
+        <input type="submit" value="Wyślij formularz">
+</form>
+    <div>
+        <p id="demo01"></p>
+        <p id="demo02"></p>
+        <p id="demo03"></p>
+        <p id="demo04"></p>
+        </div>
+<script>
+  function tab01(name01, name02, name03) 
+    {
+    this.name01 = name01;
+    this.name02 = name02;
+    this.name03 = name03;
+    
+    }
+  const currentTime = new Date();
+  let name1, name2, email ;
+    
+  const myFunction = () => 
+  {
+  let name01 =  document.getElementById("name1").value;
+  let name02 =  document.getElementById("name2").value;
+  let name03 =  document.getElementById("email").value;
+  console.log("zmienna 1", name01, "zmienna 2", name02, "zmienna 3", name03);
+  const table01 = new tab01(name01, name02, name03, currentTime);
+  console.table(table01);
+  document.getElementById("demo01").innerHTML = name01;
+  document.getElementById("demo02").innerHTML = name02;
+  document.getElementById("demo03").innerHTML = name03;
+  document.getElementById("demo04").innerHTML = currentTime.toLocaleDateString();
+  return false;
+  };
+</script>
 </body>
 </html>
